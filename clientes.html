@@ -28,6 +28,10 @@
 
     <link rel="preload" href="css/normalize.css">
     <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- animaciones -->
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
 
 </head>
@@ -66,11 +70,11 @@
 <!----------------- SECCION DE RESEÑAS -------------------->
 
 <section class="testimonios">
-    <div class="testimoniosHeader">
+    <div class="testimoniosHeader" data-aos="fade-up">
         <span>Clientes</span>
         <h1>Comentarios de Clientes</h1>
     </div>
-    <div class="testimoniosContenedor">
+    <div class="testimoniosContenedor" data-aos="fade-up" data-aos-duration="2000">
 
         <!-- primer comentario -->
         <div class="testimoniosCaja">
@@ -265,7 +269,9 @@
 
     <section class="seccionContacto formularioReseñas">
         <br>
-
+    <div data-aos="fade-up"
+    data-aos-offset="350"
+    data-aos-easing="ease-in-sine">
         <form class="formulario">
             <fieldset>
 
@@ -299,6 +305,7 @@
 
             </fieldset>
         </form>
+    </div>
     </section>
 
 </section>
@@ -311,6 +318,13 @@
             Gonzalo Montes Freelancer</p>
     </footer>
 
+
+<!-- animaciones scripts -->
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 </body>
 </html>
