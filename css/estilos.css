@@ -897,3 +897,22 @@ border-radius: 0.8rem;
     text-align: center;
     
 }
+
+/* -------------BOOTSTRAP------------ */
+
+.terminosCondiciones{
+    font-size: 2rem;
+    background-color: var(--secundario);
+}
+
+.terminosCondiciones:hover{
+    background-color: #1f484d;;
+}
+
+.modal-title{
+    font-size: 2rem;
+}
+
+.btnterminos{
+    font-size: 2rem;
+}
