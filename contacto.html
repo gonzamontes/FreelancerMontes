@@ -88,7 +88,7 @@
              Muchas gracias por confiar! Espero poder ayudarte.
               </p>
          </div>
-
+         
          <div class="viasContacto">
              <h1>Vias de contacto:
              </h1>
@@ -135,10 +135,11 @@
                     </div>
 
                     <div>
-                        <label for="">Seleccione que forma de trabajo desea</label>
-                        <select name="" id="">
-                            <option value="">Proyecto Freelancer</option>
+                        <label for="">Seleccione que forma de trabajo presenta:</label>
+                        <select class="select" name="">
+                            <option class="options" selected disabled value="">Elija su estado</option>
                             <option value="">Empresa</option>
+                            <option value="">Freelancer</option>
                             <option value="">Otro...</option>
                         </select>
                     </div>
@@ -162,25 +163,14 @@
         </div>
         
      </div>
-     <label for="basic-url" class="text-center ml-4">Si tenes una pagina propia, por favor introduce el link aqui:</label>
-<div class="input-group text-center pb-4">
+     <label for="basic-url" class="linkPagina">Si tenes una pagina propia, por favor introduce el link aqui:</label>
+<div class="contenedorLink input-group text-center pb-4">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3">https://ejemplo.com/users/</span>
+    <span class="input-group-text ejemploLink" id="basic-addon3">https://ejemplo.com/users/</span>
   </div>
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+  <input type="text" class="form-control inputLink" id="basic-url" aria-describedby="basic-addon3">
 </div>
     </main>
-
-    <div class="card text-center">
-        <div class="card-header">
-          Seguime en mis redes sociales!
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">No te olvides</h5>
-          <p class="card-text">Subo contenido interesante sobre programacion todas las semanas</p>
-          <a href="instagram.com" class="btn btn-primary">Instagram</a>   <a href="facebook.com" class="btn btn-primary">Facebook</a>   <a href="twitter.com" class="btn btn-primary">Twitter</a>
-        </div>
-      </div>
 
     <footer class="footer">
         <p>Todos los derechos reservados. <br>

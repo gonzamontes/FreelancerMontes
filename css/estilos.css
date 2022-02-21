@@ -5,11 +5,18 @@
     --primario: #dfa700;
     --secundario:#32757c;
     --gris: #19425e86;
+    --links: #997300;
     --sombra: rgba(0,0,0,0.1)
     --sombraSecundaria: 0.1rem 0.3rem rgba(2, 72, 94, 0.479);
     --sombraPrincipal: 0.1rem 0.3rem rgba(139, 137, 2, 0.425);
     --sombraOscura: 1rem 1rem rgba(37, 34, 34, 0.137);
-    --titulos: 2.3rem;
+
+    --titulos: 2.8rem;
+    --mtitulos: 3rem;
+    --textos: 2.3rem;
+    --interlineado: 3.5rem;
+
+
 }
 
 html{
@@ -27,6 +34,12 @@ body{
     font-size: 16px;
     font-family:'Outfit', sans-serif;
     background-image: linear-gradient(to bottom, var(--claro) 0%,#c7d5e4 100%);
+}
+
+h2{
+    font-size: var(--titulos);
+    font-weight: bolder;
+    margin: var(--mtitulos);
 }
 
 .sombra{
@@ -48,6 +61,7 @@ border-radius: 0.8rem;
     font-size: 3.8rem;
     text-align: center;
     text-shadow: 0.1rem 0.3rem rgba(2, 60, 77, 0.205);
+    font-weight: bolder;
 }
 
 .titulo span{
@@ -268,7 +282,7 @@ border-radius: 0.8rem;
 
 .servicios {
     text-align: left;
-    margin: 2.3rem 15rem;
+    margin: 2.3rem 15rem !important;
     display: flex;
     flex-direction: column;
     align-items: space-between;
@@ -286,8 +300,11 @@ border-radius: 0.8rem;
 
 .servicios h2{
     display: flex;
-    width: 100%;
+    width: auto;
     justify-content: center;
+    margin: var(--mtitulos);
+    font-weight: bolder;
+    font-size: var(--titulos);
 }
 
 
@@ -301,7 +318,7 @@ border-radius: 0.8rem;
 }
 .serviciosGrid{
     display: grid;
-    
+    margin-bottom: 3rem;
 }
 
 
@@ -320,6 +337,7 @@ border-radius: 0.8rem;
 .servicios1 h3{
     color: var(--gris);
     font-weight: normal;
+    margin: 01.3rem;
 }
 
 .servicios1 a{
@@ -347,6 +365,11 @@ border-radius: 0.8rem;
     
 }
 
+/* ------------------Formulario contacto Index-------------------------------- */
+
+.seccionContacto{
+    margin-bottom: 3rem;
+}
 
 .formulario{
     background-color: var(--gris);
@@ -446,13 +469,12 @@ border-radius: 0.8rem;
     display: flex;
     width: 100%;
     justify-content: center;
+    margin-top: var(--mtitulos);
+    font-size: var(--titulos);
+    font-weight: bolder;
+
 }
 
-.sobreMi h2{
-    text-transform: uppercase;
-    font-size: var(--titulos);
-    text-shadow: 0.1rem 0.3rem rgba(2, 72, 94, 0.479);
-}
 
 .sobreMiGrid{
     display: grid;
@@ -463,26 +485,31 @@ border-radius: 0.8rem;
     text-align: start;
     margin: 2rem 4.5rem;
     padding: 2rem;
-    border-top: #5a5959 0.1rem solid;
+    /* border-top: #5a5959 0.1rem solid; */
 }
 
 .quienSoy h3{
-    text-shadow: 0.1rem 0.3rem rgba(139, 137, 2, 0.425);
-    font-size: 3rem;
-
+    font-size: var(--titulos);
+    font-weight: bolder;
+    margin: var(--mtitulos);
+    text-align: center;
 }
 
 .quienSoytexto{
-    font-size: 2.3rem;
+    font-size: var(--textos);
+    line-height: var(--interlineado);
 }
+
 
 .quienSoytexto p a{
     text-decoration: none;
-    color:var(--primario);
+    color:var(--links);
     font-weight: bold;
 }
 
-/* SECCION HABILIDADES */
+
+
+/* ------------------------SECCION HABILIDADES--------------------------- */
 
 .habilidades{
     border: #40412941 solid 0.1rem;
@@ -507,6 +534,8 @@ border-radius: 0.8rem;
 }
 
 
+
+
 /* ------------------ HTML CLIENTES------------------------------- */
 
 
@@ -519,7 +548,7 @@ border-radius: 0.8rem;
 }
 
 .testimoniosHeader{
-    margin: 5rem 0rem;
+    
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
@@ -681,25 +710,31 @@ border-radius: 0.8rem;
     color: var(--primario);
     font-weight: bolder;
     text-transform: uppercase;
-    text-shadow: var(--sombraPrincipal);
+    font-size: var(--titulos);
     
 }
 
 .textoContacto .span2{
     color: var(--secundario);
     font-weight: bolder;
+    font-size: var(--textos);
+    line-height: var(--interlineado);
 }
 
 .viasContacto{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    margin-top: 2rem;
 
 }
 
 .viasContacto h1{
     color: var(--primario);
-    text-shadow:var(--sombraPrincipal);
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: var(--titulos);
+    margin-bottom: 3rem;
+    
 }
 
 .viasContacto a{
@@ -707,7 +742,7 @@ border-radius: 0.8rem;
     color: var(--oscuro);
     font-size: 2.5rem;
     font-weight: bolder;
-    text-shadow: var(--sombraOscura);
+    margin-bottom: 2rem;
 }
 
 .viasContacto a i{
@@ -733,7 +768,7 @@ border-radius: 0.8rem;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 70%;
+    height: 100%;
     padding-top: 2rem;
     background-color: var(--secundario);
     border-radius: 2rem;
@@ -803,7 +838,6 @@ border-radius: 0.8rem;
     color: var(--claro);
     font-weight: bolder;
     font-size: 2rem;
-    text-shadow: var(--sombraOscura);
     
 
 
@@ -822,11 +856,53 @@ border-radius: 0.8rem;
 
 
 
-.contenedorDerecho .contenedorFormulario select{
-   outline: 0;
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: var(--primario);
+    color: var(--claro);
+    font-weight: bolder;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+select option{
+    font-weight: bolder;
+}
+
+.linkPagina{
+    font-size: var(--textos);
+    margin: auto;
+    display: block;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.ejemploLink{
+    font-size: var(--textos);
+}
+
+.contenedorLink{
+    margin: 2rem 0rem;
+}
+
+.inputLink{
+    
+    height: auto;
 }
 
 /*  -----------------------HTML DE DISEÑOS---------------------------------- */
+
+.h2Diseños{
+    font-size: var(--titulos);
+    margin: var(--mtitulos);
+}
 
 .diseños{
     margin: 3rem 5rem;
@@ -843,7 +919,6 @@ border-radius: 0.8rem;
     align-items: center;
     padding: 3rem 0rem;
     margin:0rem 4.5rem;
-    border-top: var(--gris) 0.1rem groove;
 }
 
 .diseños .diseñosFlex h3{
@@ -863,6 +938,12 @@ border-radius: 0.8rem;
     font-size: 2rem;
     color: var(--oscuro2);
     padding-bottom: 5rem;
+}
+
+.h3Carrusel{
+    font-size: var(--titulos);
+    font-weight: bolder;
+    
 }
 
 .imgGrid1{
