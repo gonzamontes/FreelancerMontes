@@ -17,8 +17,49 @@ $mtitulos: 3rem;
 $textos: 2.3rem;
 $interlineado: 3.5rem;
 
+// MAPAS
+
+$colores:(
+    "primario": $primario,
+    "secundario": $secundario,
+    "claro": $claro,
+    "oscuro": $oscuro,
+);
+
+$sombras:(
+    "sombra1": $sombra,
+    "sombra2":$sombraSecundaria,
+    "sombra3":$sombraOscura,
+);
+
+$textos:(
+    "titulos": $titulos,
+    "texto": $textos,
+    "interlineado": $interlineado,
+);
+
+// EXTENDS y MIXINS
+
+
+.textos{
+    font-size: map-get($textos, texto );
+    line-height: map-get($textos, interlineado);
+}
+
+@mixin titulos {
+        font-size: map-get($textos, titulos);
+        margin: $mtitulos;
+}
+
+
+.titulos{
+    font-size: map-get($textos, titulos);
+    margin: $mtitulos;
+}
+
 
 // GLOBALES
+
 
 
 html{
@@ -39,9 +80,8 @@ body{
 }
 
 h2{
-    font-size: $titulos ;
     font-weight: bolder;
-    margin: $mtitulos;
+    @include titulos;
 }
 
 
@@ -69,7 +109,7 @@ h2{
 /* --------------------INICIO NAVEGADOR--------------------- */
 
 .navBg{
-    background-color: $secundario;
+    background-color: map-get($colores , secundario );
     margin: 0;
 }
 
@@ -106,8 +146,6 @@ h2{
 
         a{
             display: flex;
-           
-    
         }
     }
 
@@ -127,7 +165,7 @@ h2{
 
 
 .navegacionPrincipal a:hover{
-    background-color: $primario;
+    background-color: map-get($colores , primario);
     color: $oscuro;
     border-radius: 0.3rem;
     font-weight: bolder;
@@ -159,7 +197,7 @@ h2{
         
         h2{
             text-align: left;
-            font-size: 3rem;
+            @include titulos;
             padding: 19.3rem 0 0 7rem;
             color: $claro;
             display: inline-block;
@@ -192,19 +230,19 @@ h2{
     }
 
 @media (max-width: 640px){
-       .hero .tituloHero{
-          display: flex;
-         margin-top:-5rem;
-         width: 10rem;
+    .hero .tituloHero{
+        display: flex;
+        margin-top:-5rem;
+        width: 10rem;
         }
         }
 
 @media (max-width: 484px){
-       .hero .tituloHero{
-          display: flex;
-         margin-top:-17rem;
-         width: 10rem;
-         margin-left: -6rem;
+    .hero .tituloHero{
+        display: flex;
+        margin-top:-17rem;
+        width: 10rem;
+        margin-left: -6rem;
         }
         }
 
@@ -223,7 +261,7 @@ h2{
 
     a{
 
-        background-color: $secundario;
+        background-color: map-get($colores , secundario );
         color: $claro;
         padding: 1rem 1rem;
         font-size: 2rem;
@@ -240,7 +278,7 @@ h2{
 }
 
 .contactame a:hover{
-    background-color: $primario;
+    background-color: map-get($colores , primario);
     color: $oscuro;
     font-size: 2.3rem;
     box-shadow: 0.4rem 0.4rem rgba(0,0,0,0.1);
@@ -286,9 +324,8 @@ h2{
         display: flex;
         width: auto;
         justify-content: center;
-        margin: $mtitulos;
         font-weight: bolder;
-        font-size: $titulos;
+        @include titulos;
     }
 }
 
@@ -326,11 +363,11 @@ h2{
     }
 
     p{
-        line-height: 2.4rem;
+        @extend .textos;
     }
 
     .iconos{
-        background-color: $primario;
+        background-color: map-get($colores , primario);
         height: 15rem;
         width: 15rem;
         border-radius: 40%;
@@ -395,20 +432,20 @@ border-radius: 0.8rem;
 }
 
 .enviar{
- background-color:$secundario;
- padding: 1rem;
- border-radius: 0.8rem;
- font-size: 2rem;
- font-weight: bold;
- border: none;
- color: $claro;
- text-transform: uppercase;
- width: 100%;
- text-shadow: 0.2rem 0.4rem rgba(37, 34, 34, 0.226);
+    background-color: map-get($colores , secundario );
+    padding: 1rem;
+    border-radius: 0.8rem;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    color: $claro;
+    text-transform: uppercase;
+    width: 100%;
+    text-shadow: 0.2rem 0.4rem rgba(37, 34, 34, 0.226);
 }
 
 .enviar:hover{
-    background-color: $primario;
+    background-color: map-get($colores , primario);
     color: $oscuro;
     cursor: pointer;
     font-size: 2.3rem;
@@ -447,8 +484,7 @@ border-radius: 0.8rem;
         display: flex;
         width: 100%;
         justify-content: center;
-        margin-top: $mtitulos ;
-        font-size: $titulos ;
+        @include titulos;
         font-weight: bolder;
     
     }
@@ -468,10 +504,9 @@ border-radius: 0.8rem;
 }
 
 .quienSoy h3{
-    font-size: $titulos ;
     font-weight: bolder;
-    margin: $mtitulos ;
     text-align: center;
+    @include titulos;
 }
 
 .quienSoytexto{
@@ -494,18 +529,17 @@ border-radius: 0.8rem;
     padding: 2rem;
 
     p{
-        font-size: 2.8rem;
-        line-height: 3rem;
+        @extend .textos;
     }
 
     span{
-        color: $primario;
+        color: map-get($colores , primario);
         font-size: 4rem;
         font-weight: bolder;
     }
 
     i{
-        color: $primario;
+        color: map-get($colores , primario);
         font-size: 4rem;
     }
 }
@@ -531,9 +565,10 @@ border-radius: 0.8rem;
     align-items: center;
 
     h1{
-        font-size: 2.5rem;
+        
+        @include titulos;
         font-weight: 500;
-        background-color: $secundario;
+        background-color: map-get($colores , secundario );
         color: $claro;
         padding: 1rem 2rem;
     
@@ -605,7 +640,7 @@ border-radius: 0.8rem;
 }
 
 .reseñas{
-    color: $primario;
+    color: map-get($colores , primario);
 
 }
 
@@ -618,6 +653,8 @@ border-radius: 0.8rem;
 }
 
 .comentariosClientes p{
+
+    @extend .textos;
     color: $oscuro;
 
 }
@@ -637,7 +674,7 @@ border-radius: 0.8rem;
     width: 30%;
 
     input{
-        color: $secundario;
+        color: map-get($colores , secundario );
     }
 }
 
@@ -674,11 +711,10 @@ border-radius: 0.8rem;
 
 .textoContacto p{
     text-align: left;
-    line-height: 2.5rem;
-    font-size: 2.5rem;
+    @extend .textos;
 
     .span1{
-        color: $primario;
+        color: map-get($colores , primario);
         font-weight: bolder;
         text-transform: uppercase;
         font-size: $titulos ;
@@ -686,7 +722,7 @@ border-radius: 0.8rem;
     }
 
     .span2{
-        color: $secundario;
+        color: map-get($colores , secundario );
         font-weight: bolder;
         font-size: $textos ;
         line-height: $interlineado ;
@@ -699,11 +735,10 @@ border-radius: 0.8rem;
     margin-top: 2rem;
 
     h1{
-        color: $primario;
+        color: map-get($colores , primario);
         font-weight: bolder;
         text-transform: uppercase;
-        font-size: $titulos ;
-        margin-bottom: 3rem;
+        @include titulos;
         
     }
 
@@ -715,7 +750,7 @@ border-radius: 0.8rem;
         margin-bottom: 2rem;
 
         i{
-            color: $secundario;
+            color: map-get($colores , secundario );
             font-size: 3rem;
             font-weight: bolder;
         }
@@ -744,8 +779,8 @@ border-radius: 0.8rem;
         margin-top: 3rem;
         padding: 0;
         border-radius: 0;
-        border-top: $primario groove 0.4rem ;
-        border-bottom: $primario groove 0.4rem;
+        border-top: map-get($colores , primario) groove 0.4rem ;
+        border-bottom: map-get($colores , primario) groove 0.4rem;
 
         div{
             width: 100%;
@@ -785,7 +820,7 @@ border-radius: 0.8rem;
     width: 100%;
     height: 100%;
     padding-top: 2rem;
-    background-color: $secundario;
+    background-color: map-get($colores , secundario );
     border-radius: 2rem;
 
     div{
@@ -827,7 +862,7 @@ select{
     outline: 0;
     box-shadow: none;
     border: 0 !important;
-    background: $primario;
+    background: map-get($colores , primario);
     color: $claro;
     font-weight: bolder;
     padding: 1rem;
@@ -862,8 +897,8 @@ select{
 /*  -----------------------HTML DE DISEÑOS---------------------------------- */
 
 .h2Diseños{
-    font-size: $titulos ;
-    margin: $mtitulos ;
+    @include titulos;
+
 }
 
 .diseños{
@@ -872,6 +907,7 @@ select{
 
     h2{
         text-align: center;
+        @include titulos;
     }
 
     .diseñosFlex{
@@ -882,10 +918,10 @@ select{
         margin:0rem 4.5rem;
 
         h3{
-            background-color: $secundario;
+            background-color: map-get($colores , secundario );
             color: $claro;
             color: $claro;
-            background-color: $secundario;
+            background-color: map-get($colores , secundario );
             border-radius: 0.5rem;
             padding: 2rem 1rem;
             text-align: center;
@@ -895,18 +931,19 @@ select{
         }
 
         p{
-            font-size: 2rem;
+            @extend .textos;
             color: $oscuro2;
             padding-bottom: 5rem;
         }
 
         h2{
             color: $claro;
-            background-color: $secundario;
+            background-color: map-get($colores , secundario );
             width: auto;
             border-radius: 0.5rem;
             padding: 2rem 1rem;
             text-align: center;
+            @include titulos;
             
         }
     }
@@ -914,7 +951,7 @@ select{
 
 
 .h3Carrusel{
-    font-size: $titulos ;
+    @include titulos;
     font-weight: bolder;
     
 }
@@ -945,7 +982,7 @@ select{
 
 .terminosCondiciones{
     font-size: 2rem;
-    background-color: $secundario;
+    background-color: map-get($colores , secundario );
 }
 
 .terminosCondiciones:hover{
